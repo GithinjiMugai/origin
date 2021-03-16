@@ -1,0 +1,105 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.sidebar {
+    width: 250px;
+    position: fixed;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background-color: rgba(0, 0, 255, 0.8);
+}
+
+.sidebar-brand {
+    font-size: 20px;
+    font-family: cursive;
+    font-style: italic;
+    padding-left: 2rem;
+}
+
+.sidebar-menu li {
+    width: 100%;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    padding-top: 10px;
+    list-style: none;
+}
+
+.sidebar-menu a {
+    color: black;
+    text-decoration: none;
+}
+
+.main-content {
+    padding-left: 250px;
+}
+
+.main-content .user-wrapper {
+    text-align: right;
+    padding-right: 2rem;
+}
+
+main {
+    display: flex;
+}
+
+.cards .card-single {
+    display: inline-block;
+    justify-content: space-between;
+    padding-left: 2rem;
+}
+
+/* learners styles */
+
+.container {
+    padding-left: 250px;
+}
+
+.text {
+    font-size: 1rem;
+    font-family: cursive;
+}
+
+.form-check {
+    display: flex;
+    justify-content: space-between;
+}
+
+.btn:hover {
+    background-color: wheat;
+}
+/* instructor styles */
+
+.container .table {
+    margin-top: 20px;
+}
+
+/* activity styles */
+
+.activity-content {
+    padding-left: 250px;
+}
+
+.activity-content .col-sm {
+    padding: 20px 20px;
+    text-align: center;
+    border: 1px solid cadetblue;
+    margin: 20px 20px;
+    justify-content: space-around;
+    flex-wrap: wrap;    
+}
+
+.col-sm .title {
+    background-color: rgba(0, 0, 255, 0.8);
+    font-family: cursive;
+    font-size: 2rem;
+    font-style: italic;
+}
+
+.col-sm .info {
+    font-size: 30px;
+    font-family: 'Times New Roman', Times, serif;
+}
