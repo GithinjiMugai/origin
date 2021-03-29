@@ -13,13 +13,11 @@
         $phone      = $_POST['phone'];
         $kra        = $_POST['kra'];
         $gender     = $_POST['gender'];
-        $city       = $_POST['city'];
-        $branch     = $_POST['branch'];
-        $school     = $_POST['school'];
+        $msg        = $_POST['msg'];
         $upload     = $_POST['upload'];
 
-        $STH = $db->prepare("INSERT INTO user_details(Id_No, surname, firstname, email, county, address, nationality, dob, license, phone, kra, gender, city, branch, school, upload) values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)"); 
-        $data = array($Id_No, $surname, $firstname, $email, $county, $address, $nationality, $dob, $license, $phone, $kra, $gender, $city, $branch, $school, $upload);
+        $STH = $db->prepare("INSERT INTO user_details(Id_No, surname, firstname, email, county, address, nationality, dob, license, phone, kra, gender, msg, upload) values(?,?,?,?,?,?,?,?,?,?,?,?,?,?)"); 
+        $data = array($Id_No, $surname, $firstname, $email, $county, $address, $nationality, $dob, $license, $phone, $kra, $gender, $msg, $upload);
         $STH->execute($data);
 
         header("refresh: 1, url = ../dashboard.php");

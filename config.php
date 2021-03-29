@@ -5,6 +5,7 @@ $db_user = 'root';
 $db_pass = '';
 $db_name = 'driving-school';
 
+
 try{
     $db = new PDO("mysql:host=$host;dbname=$db_name", $db_user, $db_pass);
     $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -25,7 +26,9 @@ try{
             unset($_SESSION['user']); 
             }
         }
+          
     }
+
 
 
     catch(PDOException $e){

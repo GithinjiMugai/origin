@@ -29,7 +29,7 @@ if(isset($_POST['submit'])){
             $_SESSION['error'] = "Email does not exist";            
         }
         catch(PDOException $e){
-            $_SESSION['error'] = "I'm afraid I can't Log you in at the moment.";
+            $_SESSION['error'] = "I'm afraid I can't Log you in at the moment. Please contact the administration!";
             file_put_contents('PDOErrors.txt', $e->getMessage(), FILE_APPEND); # log errors to afile
         }
 

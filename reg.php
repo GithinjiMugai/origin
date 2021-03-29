@@ -37,24 +37,22 @@ require_once('config.php');
 </nav>
 </div>
 
-<div id="alert">
-      <?php
-        require_once "feedback.php";
-      ?>
-  </div>
-
 <div class="container">
   <div class="login-container">
   <?php 
     require_once "./includes/register.php"
 
   ?>
+  <div id="alert">
+      <?php
+        require_once "feedback.php";
+      ?>
+  </div>
 
-  
         <form method="post" onSubmit="validate();">
               <div class="row">
                 <div class="col-sm-3">
-                <h1>Learners Registration</h1>
+                <h1>Registration Form</h1>
                 <p>Add an account!</p>
                 <hr class="nb-3">
                 <label for="firstname"><i>First Name</i></label>

@@ -2,7 +2,7 @@
 require_once 'config.php';
 
 // learner
-if((isset($_SESSION['user'])) && $user['is_staff'] == 0 ){ 
+if (isset($_SESSION['user']) && $user['is_staff'] == 0 ){ 
   header("location:dashboard.php");
 } else {
 
@@ -45,7 +45,7 @@ if (isset($_SESSION['user']) && $user['is_staff'] == 1 ){
     </div>
   </div>
 </nav>
-</div>  
+</div>
 
 <div class="container">
   <div class="img">
@@ -55,11 +55,13 @@ if (isset($_SESSION['user']) && $user['is_staff'] == 1 ){
     <?php
       require_once "log.php"; 
     ?>
-  <div id="alert">
+  
+<div id="alert">
   <?php
   require_once "feedback.php";
   ?>
-  </div>
+</div>
+  
   <form action="login.php" method="post">
         <div class="row">
             <div class="col-sm-3">
@@ -72,20 +74,23 @@ if (isset($_SESSION['user']) && $user['is_staff'] == 1 ){
                 <label for="password"><i>Password</i></label>
                 <input class="form-control" id="password" type="password" name="password" required>
 
-              <p><input type="checkbox" > Remember me</p>
-
-                <hr class="nb-3">
+                <hr>
 
                 <button class="btn btn-primary" type="submit" id="login" name="submit" style=text-align:center;>Sign up</button><br>
                         
                 <a href="reg.php">Create account</a>
-                <a href="">Forgot Password?</a>
+                
                        
             </div>
         </div>
     </form>
     </div>
   </div> 
+  <div class="footer">
+  <center>
+   <p>DSLS &copy; 2021</p> 
+  </center>
+</div>
 </div>
 
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>

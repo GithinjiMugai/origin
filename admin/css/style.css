@@ -68,9 +68,6 @@ main {
     justify-content: space-between;
 }
 
-.btn:hover {
-    background-color: wheat;
-}
 /* instructor styles */
 
 .container .table {

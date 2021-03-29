@@ -14,7 +14,7 @@
             $data = array($firstname,$lastname,$email,$number,$password);
             $STH->execute($data); 
 
-            header("refresh: 1, url= ./includes/enrollme.php");
+            header("refresh: 1, url= login.php");
 
             
         }

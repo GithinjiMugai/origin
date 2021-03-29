@@ -1,3 +1,10 @@
+<?php
+require_once("../config.php");
+
+$sql = $db-> prepare("SELECT * FROM user");
+$sql->execute();
+$users = $sql->fetchAll(PDO::FETCH_ASSOC);
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,11 +12,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Client Page</title>
+    <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
-    <div class="sidebar">
+<div class="sidebar">
         <div class="sidebar-brand">
             <h1><span class="las la-accusoft"></span>DSLS</h1>
         </div><br>
@@ -17,7 +25,7 @@
         <div class="sidebar-menu">
             <ul>
                 <li>
-                    <a href="home.html"><span class="las la-igloo"></span>Home</a>
+                    <a href="home.php"><span class="las la-igloo"></span>Home</a>
                 </li>
                 <li>
                     <a href="clients.php"><span class="las la-users"></span>Clients</a>
@@ -26,10 +34,10 @@
                     <a href="instructor.php"><span class="las la-users"></span>Instructors</a>
                 </li>
                 <li>
-                    <a href="activity.html"><span class="las la-clipboard"></span>Activities</a>
+                    <a href="activity.php"><span class="las la-clipboard"></span>Activities</a>
                 </li>
                 <li>
-                    <a href="payment.html"><span class="las la-igloo"></span>Payments</a>
+                    <a href="payment.php"><span class="las la-igloo"></span>Payments</a>
                 </li>
             </ul>
         </div>
@@ -37,32 +45,23 @@
 
     <div class="container">
             <div class="text">
-                <h2>Registered Learners</h2>
+                <h2>Registered Participants</h2>
             </div>
 
         <table class="table table-hover">
             <thead>
-                <tr>
-                    <th>Learner No.</th>
+                <tr>    
+                    <th>ID</th>     
                     <th>Learner Name</th>
                     <th>Learner Email</th>
-                    <th>Learner Number</th>
-                    <th>Progress</th>
+                    <th>Phone Number</th>
+                    <th>Action</th>
                 </tr>
             </thead>
         <tbody>
-            <?php
-            require_once("../config.php");
-
-            $sql = $db-> prepare("SELECT * FROM user");
-            $sql->execute();
-            $users = $sql->fetchAll(PDO::FETCH_ASSOC);
-            foreach ($users as $user) {
-        ?>
+            <?php foreach ($users as $user) {?>
         <tr>
-            <td>
-                <?php echo $user['id']; ?>
-            </td>
+            <td><?php echo $user['id']; ?></td>
             <td>
                 <?php echo $user['firstname']; ?>
                 <?php echo $user['lastname']; ?>
@@ -74,24 +73,16 @@
                 <?php echo $user['number']; ?>
             </td>
             <td>
-                <div class="form-check">
-                    <div class="edit">
-                        <input class="btn btn-primary" type="button" value="Edit">
-                    </div>
-                    <div class="del">
-                        <input class="btn btn-primary" type="button" value="Delete">
-                    </div>
-                </div>
+                <a href="edit.php?id=<?php echo $user['id']; ?>" class="btn btn-primary" >Edit</a>
+                <a onclick="return confirm('Are you sure you want to delete?')" href="delete.php?id=<?php echo $user['id']; ?>" class="btn btn-danger" >Delete</a>
             </td>
         </tr>
 
-        <?php       
-            }
-        ?>
+        <?php } ?>
         </tbody>
     </table>
     
     </div>
-
+ 
 </body>
 </html>

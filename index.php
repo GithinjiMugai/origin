@@ -61,19 +61,17 @@ if(isset($_SESSION['user']) && $db_user['is_staff'] == 1) {
           <a class="nav-link" aria-current="page" href="">Team</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" aria-current="page" href="">Portfolio</a>
+          <a class="nav-link" aria-current="page" target="_blank" href="https://youtu.be/_ftY9yka9rc">Learn to Drive</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" aria-current="page" href="#call">Contact Us</a>
         </li>
       </ul>
-    </div>
-        <div class="top">
-          <li class="nav-item">
-            <a class="nav-link" aria-current="page" href="login.php">Login/Register</a>
-          </li>
-        </div>
+    </div>      
   </div>
+    <div>
+      <a class="btn btn-outline-dark" href="login.php">Login/Register</a>
+    </div>   
 </nav>
 </div>
 
@@ -238,7 +236,7 @@ style ="background-image: url(https://lh3.googleusercontent.com/IyWliNU7K8eoF2eQ
   <a href="https://tims.ntsa.go.ke/login_csp.jsp"target="_blank">Book for Test</a><br>
   <a href="login.php">Book lessons</a>
 </div>
-<p>Copyrights&copy; 2021</p>
+<p>DSLS &copy; 2021</p>
 
 </div>
 
